@@ -1,0 +1,33 @@
+set clipboard+=unnamed  "共享剪切板
+syntax on "语法高亮
+set ruler
+"set nohls "取消匹配高亮
+map <F1> ^
+map <F2> $
+"递归映射
+imap jk <Esc>
+set relativenumber "相对行号
+set cursorline     "突出显示当前行
+set cursorcolumn   "突出显示当前列
+set fdm=marker
+set keep-english-in-normal-and-restore-in-insert
+let mapleader = "\<space>"
+map <leader> @
+let @a = 'ggVGy' "normal下：空格+a 全文复制
+let @y = 'vi"y' "normal下且在""中： 空格+y 复制 "" 中的内容
+let @p = 'vi"p'  "normal下且在""中： 空格+p  把 "" 中的内容替换为剪切板的内容
+let @w = 'A;jkj'
+map <leader><leader> @y
+"非递归映射
+inoremap $r $r('app.')<Esc>hi
+inoremap <C-V> <Esc>p
+":tabnext = gt
+":tabprev = gT
+"<CR> = 回车
+"<C-o> = <Esc>
+"C = Ctrl
+"A = Alt
+nnoremap <A-l> :tabnext<CR>
+nnoremap <A-h> :tabprev<CR>
+inoremap <A-l> <C-o>gt
+inoremap <A-h> <C-o>gT
