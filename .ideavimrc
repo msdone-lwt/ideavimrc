@@ -17,7 +17,9 @@ let @a = 'ggVGy' "normal下：空格+a 全文复制
 let @y = 'vi"y' "normal下且在""中： 空格+y 复制 "" 中的内容
 let @p = 'vi"p'  "normal下且在""中： 空格+p  把 "" 中的内容替换为剪切板的内容
 let @w = 'A;jkj'
+
 map <leader><leader> @y
+map <leader>s /<C-r>*<CR> "将剪切板的内容进行搜索
 "非递归映射
 inoremap $r $r('app.')<Esc>hi
 inoremap <C-V> <Esc>p
