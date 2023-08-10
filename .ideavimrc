@@ -19,7 +19,8 @@ let @p = 'vi"p'  "normal下且在""中： 空格+p  把 "" 中的内容替换为
 let @w = 'A;jkj'
 
 map <leader><leader> @y
-map <leader>s /<C-r>*<CR> "将剪切板的内容进行搜索
+"将剪切板的内容进行搜索
+map <leader>s /<C-r>*<CR>
 "非递归映射
 inoremap $r $r('app.')<Esc>hi
 inoremap <C-V> <Esc>p
@@ -29,6 +30,7 @@ inoremap <C-V> <Esc>p
 "<C-o> = <Esc>
 "C = Ctrl
 "A = Alt
+nnoremap <A-m> `m "跳转到标记m
 nnoremap <A-l> :tabnext<CR>
 nnoremap <A-h> :tabprev<CR>
 inoremap <A-l> <C-o>gt
