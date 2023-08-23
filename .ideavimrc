@@ -38,7 +38,12 @@ nnoremap <A-l> :tabnext<CR>
 nnoremap <A-h> :tabprev<CR>
 inoremap <A-l> <C-o>gt
 inoremap <A-h> <C-o>gT
-
+"ctrl+d-> 保存退出(:tabc关闭tabs)
+nnoremap <C-d> :wq<CR>
+inoremap <C-d> <C-o>:wq<CR>
+"ctrl+o->关闭其他所有tabs
+nnoremap <C-o> :tabo<CR>
+inoremap <C-o> <C-o>:tabo<CR>
 
 "将剪切板的内容进行搜索
 map <leader>s /<C-r>*<CR>
