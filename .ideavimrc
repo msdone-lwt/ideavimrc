@@ -13,8 +13,7 @@ set fdm=marker
 set keep-english-in-normal-and-restore-in-insert
 let mapleader = "\<space>"
 map <leader> @
-"let @a = 'ggVGy'
-"normal下：空格+a 全文复制
+
 let @y = 'vi"y' "normal下且在""中： 空格+y 复制 "" 中的内容
 let @p = 'vi"p'  "normal下且在""中： 空格+p  把 "" 中的内容替换为剪切板的内容
 let @w = 'A;jkj'
