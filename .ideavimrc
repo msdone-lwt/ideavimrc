@@ -2,10 +2,11 @@ set clipboard+=unnamed  "共享剪切板
 syntax on "语法高亮
 set ruler
 "set nohls "取消匹配高亮
-map <F1> ^
+set cursorline     "突出显示当前行
+set cursorcolumn   "突出显示当前列
 "递归映射
 imap jk <Esc>
-set relativenumber "相对行号
+set number relativenumber "相对行号
 set cursorline     "突出显示当前行
 set cursorcolumn   "突出显示当前列
 set number
@@ -20,6 +21,7 @@ let @w = 'A;jkj'
 
 map <leader><leader> @y
 nnoremap <leader>a  ggyG
+nnoremap <Leader>re :action RenameElement<CR>
 
 "非递归映射
 inoremap $r $r('app.')<Esc>hi
@@ -53,6 +55,11 @@ map <leader>s /<C-r>*<CR>
 map <leader>r :reg<CR>
 "打开marks
 map <leader>m :marks<CR>
+"HL 跳转到行首行尾
+map H ^
+map L $
+"Visual 模式下粘贴不会将粘贴的内容存储到寄存器
+vnoremap p pgvy
 
 "光标在首列和首个非空白字符之间的切换。
 noremap  <expr> 1  col('.') == 1 ? '^': '0'
@@ -60,3 +67,14 @@ noremap  <expr> 1  col('.') == 1 ? '^': '0'
 nnoremap <expr> <F2> &number ? ':set nonumber<CR>' : ':set number<CR>'
 "如果弹出菜单可见（pumvisible() 返回 1，例如在自动补全中），则 <Tab> 键将用于选择下一个补全项；否则，它将插入一个制表符。
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+"ideaVim需要安装插件
+set quickscope
+let g:qs_primary_color = '#01ff41' "配置第一次出现的字符颜色。请使用十六进制颜色
+let g:qs_secondary_color = '#ee0505' "配置第一次出现的字符颜色。请使用十六进制颜色
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+"ideaVim自带的插件
+set NERDTree
+set surround
+set easymotion
